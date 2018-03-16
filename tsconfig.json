@@ -5,7 +5,7 @@
       "target": "es5",
       "noImplicitAny": false,
       "sourceMap": true,
-      "baseUrl": "src",
+      "baseUrl": "./",
       "outDir": "./dist",
       "declaration": false,
       "emitDecoratorMetadata": true,
@@ -19,7 +19,12 @@
       ],
       "types": [
           "node"
-      ]
+      ],
+      "paths": {
+        "_npm/*": ["node_modules/*"],
+        "_components/*": ["src/components/*"],
+        "_scss/*": ["src/assets/sass/*"]
+      }
   },
   "awesomeTypeScriptLoaderOptions": {
       "useWebpackText": true

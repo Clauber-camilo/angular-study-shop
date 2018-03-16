@@ -4,16 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
-console.log({AppComponent})
+import { HeaderComponent } from '_components/layout/header/header.component'
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent
     ],
     imports: [
+        // Angular Imports
         BrowserModule,
         FormsModule,
-        HttpModule
+        HttpModule,
     ],
     providers: [],
     bootstrap: [ AppComponent ]

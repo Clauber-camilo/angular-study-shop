@@ -3,7 +3,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 
 import './polyfills'
 import './assets/sass/main.scss'
-import { AppModule } from './components/app/app.module'
+import { AppModule } from './components/app.module'
 
 if (APP_ENV === 'production') {
     enableProdMode()

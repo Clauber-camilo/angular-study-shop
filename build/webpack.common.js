@@ -43,8 +43,8 @@ module.exports = {
         ],
         alias: {
             '_npm': resolve('node_modules'),
-            '@shared': resolve('src/app/shared'),
-            '@scssconf': resolve('src/assets/sass/config'),
+            '_components': resolve('src/components'),
+            '_scss': resolve('src/assets/sass'),
             '@env': resolve('src/environments')
         }
     },

@@ -1,0 +1,15 @@
+# build
+
+/dist
+
+# dependencies
+/node_modules
+
+
+# etc
+npm-debug.log
+/.sass-cache
+
+
+# system
+.DS_Store

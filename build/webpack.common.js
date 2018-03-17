@@ -49,14 +49,11 @@ module.exports = {
                     name: 'vendor',
                     priority: -10,
                     minChunks: 2,
-                    chunks: 'all',
+                    chunks: 'initial',
                     enforce: true
                 }
             }
-        },
-        runtimeChunk: {
-            name: 'common'
-        },
+        }
     },
 
     output: {

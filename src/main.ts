@@ -8,9 +8,6 @@ import { AppModule } from './components/app.module'
 if (APP_ENV === 'production') {
     enableProdMode()
 }
-
-console.log('HASOUHSAOUAS');
-
 const bootstrapPromise = platformBrowserDynamic().bootstrapModule(AppModule)
 
 bootstrapPromise

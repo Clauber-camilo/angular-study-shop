@@ -45,6 +45,7 @@ module.exports = {
             '_npm': resolve('node_modules'),
             '_components': resolve('src/components'),
             '_scss': resolve('src/assets/sass'),
+            '_img': resolve('src/assets/img'),
             '@env': resolve('src/environments')
         }
     },

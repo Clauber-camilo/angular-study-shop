@@ -23,7 +23,8 @@
       "paths": {
         "_npm/*": ["node_modules/*"],
         "_components/*": ["src/components/*"],
-        "_scss/*": ["src/assets/sass/*"]
+        "_scss/*": ["src/assets/sass/*"],
+        "_img/*": ["src/assets/img/*"]
       }
   },
   "awesomeTypeScriptLoaderOptions": {

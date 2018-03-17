@@ -1,1 +1,6 @@
-@import '../../../node_modules/spectre.css/dist/spectre.css'
+@import '../../../node_modules/spectre.css/dist/spectre.css';
+
+@import '~_scss/config/base';
+@import '~_scss/config/mixins';
+@import '~_scss/config/template';
+@import '~_scss/config/vars';

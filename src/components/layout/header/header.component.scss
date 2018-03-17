@@ -1,0 +1,26 @@
+@import '~_scss/config/vars';
+
+.header {
+    &__login-nav {
+        background-color: $primary;
+        color: rgba($white, .70);
+        padding: 15px 0;
+    }
+    &__main-nav {
+        background-color: $white;
+        padding: 15px 0;
+
+        .container {
+            display: flex;
+
+            &__logo {
+                width: 50px;
+                height: 50px;
+
+                background-image: url('~_img/angular.svg');
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    }
+}

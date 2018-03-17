@@ -1,4 +1,5 @@
 @import '~_scss/config/vars';
+@import '~_scss/config/mixins';
 
 .header {
     &__login-nav {
@@ -12,15 +13,29 @@
 
         .container {
             display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-            &__logo {
-                width: 50px;
-                height: 50px;
+            &__logo-block {
+                display: flex;
+                align-items: center;
 
-                background-image: url('~_img/angular.svg');
-                background-position: center;
-                background-size: cover;
+                &__img {
+                    width: 50px;
+                    height: 50px;
+
+                    background-image: url('~_img/angular.svg');
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                &__text {
+                    font-size: rem(24px);
+                    font-family: $font-pacifico;
+                    margin-left: 10px;
+                }
             }
+
         }
     }
 }

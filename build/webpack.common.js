@@ -18,17 +18,45 @@ module.exports = {
         app: './src/main.ts',
         polyfills: './src/polyfills.ts'
     },
+    // optimization: {
+    //     splitChunks: {
+    //         cacheGroups: {
+    //             vendor: {
+    //                 chunks: "initial",
+    //                 test: path.resolve(__dirname, "node_modules"),
+    //                 name: "vendor",
+    //                 enforce: true
+    //             }
+    //         }
+    //     }
+    // },
     optimization: {
         splitChunks: {
+            chunks: "all",
+            minSize: 30000,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            name: true,
             cacheGroups: {
-                vendor: {
-                    chunks: "initial",
-                    test: path.resolve(__dirname, "node_modules"),
-                    name: "vendor",
+                default: {
+                    minChunks: 2,
+                    priority: -20,
+                    reuseExistingChunk: true,
+                },
+                common: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    priority: -10,
+                    minChunks: 2,
+                    chunks: 'all',
                     enforce: true
                 }
             }
-        }
+        },
+        runtimeChunk: {
+            name: 'common'
+        },
     },
 
     output: {
@@ -60,6 +88,12 @@ module.exports = {
         rules: [{
                 test: /\.ts$/,
                 use: ['awesome-typescript-loader', 'angular2-template-loader']
+            },
+            {
+                test: /\.(ts|js)$/,
+                loaders: [
+                  'angular-router-loader'
+                ]
             },
             {
                 test: /\.html$/,

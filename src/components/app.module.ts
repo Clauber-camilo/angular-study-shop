@@ -6,9 +6,11 @@ import { RouterModule } from '@angular/router'
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from '_components/layout/header/header.component'
+import { HomeModule } from '_components/views/home//home.module'
+
 import { appRouts } from './routes'
 
-// const Routing:ModuleWithProviders = RouterModule.forRoot(appRouts)
+const Routing:ModuleWithProviders = RouterModule.forRoot(appRouts)
 
 @NgModule({
     declarations: [
@@ -20,7 +22,8 @@ import { appRouts } from './routes'
         BrowserModule,
         FormsModule,
         HttpModule,
-        // Routing
+        Routing,
+        HomeModule
     ],
     providers: [],
     bootstrap: [ AppComponent ]

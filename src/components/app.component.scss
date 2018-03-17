@@ -1,0 +1,12 @@
+@import '~_scss/config/vars';
+
+:host {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    min-height: calc(100vh - #{$header-height});
+    background-color: $primary-background;
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, ChangeDetectionStrategy} from '@angular/core'
 import { DomSanitizer } from '@angular/platform-browser';
 import { Store, select} from '@ngrx/store'
 import { Observable} from 'rxjs/Observable'
@@ -8,6 +8,7 @@ import * as fromRoot from '_components/reducers'
 
 @Component({
     selector: 'home',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
@@ -16,9 +17,7 @@ export class HomeComponent {
     showSideCart$: Observable<boolean>
 
     constructor(private store: Store<fromRoot.State>, private sanitization:DomSanitizer) {
-        this.showSideCart$ = store.pipe(select('fromRoot.getShowSideCart'))
-
-        console.log(this.showSideCart$);
+        this.showSideCart$ = this.store.pipe(select(fromRoot.getShowSideCart))
     }
 
     public Image = this.sanitization.bypassSecurityTrustUrl(require('_img/angular.svg'))

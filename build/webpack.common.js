@@ -69,6 +69,8 @@ module.exports = {
         alias: {
             '_npm': resolve('node_modules'),
             '_components': resolve('src/components'),
+            '_src': resolve('src'),
+            '_shared': resolve('src/shared'),
             '_scss': resolve('src/assets/sass'),
             '_img': resolve('src/assets/img'),
             '@env': resolve('src/environments')

@@ -3,9 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Store, select} from '@ngrx/store'
 import { Observable} from 'rxjs/Observable'
 
-import * as fromLayout from '_components/reducers/layout/layout'
 import * as layoutActions from '_components/reducers/layout/action'
-
+import * as fromRoot from '_components/reducers'
 
 @Component({
     selector: 'home',
@@ -16,8 +15,10 @@ import * as layoutActions from '_components/reducers/layout/action'
 export class HomeComponent {
     showSideCart$: Observable<boolean>
 
-    constructor(private store: Store<fromLayout.State>, private sanitization:DomSanitizer) {
-        this.showSideCart$ = this.store.pipe(select('fromLayout.getShowSideCart'))
+    constructor(private store: Store<fromRoot.State>, private sanitization:DomSanitizer) {
+        this.showSideCart$ = store.pipe(select('fromRoot.getShowSideCart'))
+
+        console.log(this.showSideCart$);
     }
 
     public Image = this.sanitization.bypassSecurityTrustUrl(require('_img/angular.svg'))

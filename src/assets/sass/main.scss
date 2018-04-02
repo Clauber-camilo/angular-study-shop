@@ -6,3 +6,7 @@
 @import '~_scss/config/mixins';
 @import '~_scss/config/template';
 @import '~_scss/config/vars';
+
+// Font-awesome
+$fa-font-path : '~_npm/font-awesome/fonts';
+@import '~_npm/font-awesome/scss/font-awesome.scss';

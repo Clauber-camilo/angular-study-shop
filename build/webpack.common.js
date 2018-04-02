@@ -146,14 +146,14 @@ module.exports = {
                     'sass-loader'
                 ]
             },
-            {
-                test: /\.(eot|otf|ttf|woff|woff2)(\?v=[a-z0-9=\.]+)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: 'fonts/[name].[ext]?[hash]'
-                }
-            },
+            // {
+            //     test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
+            //     loader: 'url-loader',
+            //     options: {
+            //         limit: 10000,
+            //         name: 'fonts/[name].[ext]?[hash]'
+            //     }
+            // },
             {
                 test: /\.(png|jpe?g|gif|svg)?$/,
                 loader: 'url-loader',
@@ -161,6 +161,16 @@ module.exports = {
                     limit: 10000,
                     name: 'imgs/[name].[ext]?[hash]'
                 }
+            },
+            {
+                test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]?[hash]',
+                        outputPath: 'fonts/',    // where the fonts will go
+                    }
+                }]
             }
         ]
     },

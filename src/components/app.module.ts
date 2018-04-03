@@ -12,7 +12,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from '_components/layout/header/header.component'
-import { HomeModule } from '_components/views/home//home.module'
+import { HomeModule } from '_components/views/home/home.module'
+import { CartComponent } from '_components/sub-components/cart/cart.component'
 import { CustomRouterStateSerializer } from '_shared/utils'
 
 import { appRouts } from './routes'
@@ -23,7 +24,8 @@ const Routing:ModuleWithProviders = RouterModule.forRoot(appRouts)
 @NgModule({
     declarations: [
         AppComponent,
-        HeaderComponent
+        HeaderComponent,
+        CartComponent
     ],
     imports: [
         // Angular Imports

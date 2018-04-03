@@ -2,6 +2,8 @@
 @import '~_scss/config/mixins';
 
 .header {
+    position: relative;
+
     &__login-nav {
         background-color: $primary;
         color: rgba($white, .70);
@@ -38,6 +40,7 @@
 
             &__cart-icon {
                 font-size: rem(25px);
+                cursor: pointer;
             }
 
         }

@@ -19,6 +19,10 @@ export function reducer (state:State = initialState, action: LayoutAction ):Stat
             return {
                 showSideCart: false
             }
+        case LayoutActionTypes.ToggleSideCart:
+            return {
+                showSideCart: !state.showSideCart
+            }
 
         default:
             return state

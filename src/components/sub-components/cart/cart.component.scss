@@ -1,0 +1,26 @@
+@import '~_scss/config/vars';
+@import '~_scss/config/mixins';
+
+:host {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 400px;
+    margin-top: $header-height;
+
+    @include media-q ($screen-xs) {
+        width: 100%;
+    }
+}
+.cart-component {
+    min-height: calc(100vh - #{$header-height});
+    background-color: $background-secondary;
+
+    transform: translateX(100%);
+    transition: transform .3s ease;
+
+    &--open {
+        transform: translateX(0);
+    }
+}

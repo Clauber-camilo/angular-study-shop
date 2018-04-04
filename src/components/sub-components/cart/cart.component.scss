@@ -19,8 +19,49 @@
 
     transform: translateX(100%);
     transition: transform .3s ease;
+    box-shadow: $shadow;
+    padding: 15px;
 
     &--open {
         transform: translateX(0);
+    }
+
+    .card {
+        &__body {
+            display: flex;
+            &__img {
+                background-image: url('~_img/headset.jpg');
+                background-size: cover;
+                background-position: center;
+
+                min-width: 80px;
+                height: 80px;
+            }
+
+            &__description {
+                margin-left: 10px;
+                width: 100%;
+            }
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        display: flex;
+
+        padding: 15px;
+
+        &__btn-checkout {
+            &:first-of-type {
+                margin-right: calc(15px / 2);
+            }
+            &:last-of-type {
+                margin-left: calc(15px / 2);
+            }
+        }
     }
 }

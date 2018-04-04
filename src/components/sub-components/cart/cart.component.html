@@ -1,3 +1,15 @@
 <div class="cart-component" [ngClass]="{'cart-component--open': showSideCart$ | async  }">
-    CART COMPONENT
+    <div class="cart-component__card card">
+        <div class="card__body card-body">
+            <div class="card__body__img"></div>
+            <div class="card__body__description">
+                <div class="card-title h5">New Product</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-component__footer">
+        <div class="cart-component__footer__btn-checkout btn btn-lg btn-block"> See the Cart </div>
+        <div class="cart-component__footer__btn-checkout btn btn-primary btn-lg btn-block"> Checkout </div>
+    </div>
 </div>

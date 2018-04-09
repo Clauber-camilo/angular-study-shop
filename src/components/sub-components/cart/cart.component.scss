@@ -9,6 +9,10 @@
     width: 400px;
     margin-top: $header-height;
 
+    z-index: 10;
+
+    transform: translateX(100%);
+
     @include media-q ($screen-xs) {
         width: 100%;
     }
@@ -17,13 +21,14 @@
     min-height: calc(100vh - #{$header-height});
     background-color: $background-secondary;
 
-    transform: translateX(100%);
     transition: transform .3s ease;
     box-shadow: $shadow;
+
+    // transform: translateX(100%);
     padding: 15px;
 
     &--open {
-        transform: translateX(0);
+        transform: translateX(-100%);
     }
 
     .card {

@@ -2,6 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { CommonModule } from '@angular/common'
 import { HomeComponent } from './home.component'
+import { SliderComponent } from '_components/sub-components/slider/slider.component'
 
 export const ROUTES : Routes = [
     {
@@ -11,12 +12,13 @@ export const ROUTES : Routes = [
 ]
 
 @NgModule({
+    declarations: [
+        HomeComponent,
+        SliderComponent
+    ],
     imports: [
         CommonModule,
         RouterModule.forChild(ROUTES)
-    ],
-    declarations: [
-        HomeComponent
     ]
 })
 

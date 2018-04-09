@@ -15,9 +15,13 @@ import * as fromRoot from '_components/reducers'
 
 export class HomeComponent {
     showSideCart$: Observable<boolean>
+    options: Object
 
     constructor(private store: Store<fromRoot.State>, private sanitization:DomSanitizer) {
         this.showSideCart$ = this.store.pipe(select(fromRoot.getShowSideCart))
+        this.options = {
+            xablau: 'teste'
+        }
     }
 
     public Image = this.sanitization.bypassSecurityTrustUrl(require('_img/angular.svg'))

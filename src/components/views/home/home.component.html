@@ -1,17 +1,3 @@
-<div class="card">
-    <div class="card-image">
-        <!-- <img [src]="Image" class="img-responsive"> -->
-    </div>
-    <div class="card-header">
-        <div class="card-title h5">HOME COMPONENT</div>
-        <div class="card-subtitle text-gray">Software and hardware</div>
-    </div>
-    <div class="card-body">
-        Empower every person and every organization on the planet to achieve more.
-    </div>
-    <div class="card-footer">
-        <div (click)="openSideCart()" *ngIf="!(showSideCart$ | async)" class="btn btn-primary">Open</div>
-        <div (click)="closeSideCart()" *ngIf="showSideCart$ | async" class="btn btn-primary">Close</div>
-        Actual state {{ showSideCart$ | async }}
-    </div>
+<div class="home-component">
+    <slider-component [options]="options"></slider-component>
 </div>

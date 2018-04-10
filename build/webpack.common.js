@@ -1,8 +1,6 @@
-const webpack = require('webpack'),
-    {
-        resolve
-    } = require('./utils'),
-    path = require('path')
+const webpack = require('webpack')
+const { resolve } = require('./utils')
+const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -10,47 +8,34 @@ const postcssConfig = require('./config/postcss.config')
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
-
     entry: {
         // vendor: Object.keys(require('../package').dependencies)
         //     .filter(d => !(d in vendorIgnore)),
 
         app: './src/main.ts',
-        polyfills: './src/polyfills.ts'
+        // polyfills: './src/polyfills.ts'
     },
-    // optimization: {
-    //     splitChunks: {
-    //         cacheGroups: {
-    //             vendor: {
-    //                 chunks: "initial",
-    //                 test: path.resolve(__dirname, "node_modules"),
-    //                 name: "vendor",
-    //                 enforce: true
-    //             }
-    //         }
-    //     }
-    // },
     optimization: {
+        runtimeChunk: true,
+        concatenateModules: true,
         splitChunks: {
             chunks: "all",
             minSize: 30000,
-            minChunks: 1,
             maxAsyncRequests: 5,
             maxInitialRequests: 3,
             name: true,
             cacheGroups: {
                 default: {
                     minChunks: 2,
-                    priority: -20,
                     reuseExistingChunk: true,
                 },
                 common: {
                     test: /[\\/]node_modules[\\/]/,
                     name: 'vendor',
-                    priority: -10,
-                    minChunks: 2,
                     chunks: 'initial',
-                    enforce: true
+                    priority: 10,
+                    enforce: true,
+                    minChunks: 2
                 }
             }
         }
@@ -59,7 +44,8 @@ module.exports = {
     output: {
         path: resolve('dist'),
         publicPath: '/',
-        filename: '[name].js'
+        filename: '[chunkhash].js',
+        chunkFilename: '[chunkhash].js'
     },
 
     resolve: {
@@ -146,14 +132,6 @@ module.exports = {
                     'sass-loader'
                 ]
             },
-            // {
-            //     test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/,
-            //     loader: 'url-loader',
-            //     options: {
-            //         limit: 10000,
-            //         name: 'fonts/[name].[ext]?[hash]'
-            //     }
-            // },
             {
                 test: /\.(png|jpe?g|gif|svg)?$/,
                 loader: 'url-loader',
@@ -179,12 +157,12 @@ module.exports = {
         new webpack.DefinePlugin({
             APP_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
         }),
+        new webpack.ProgressPlugin(),
 
         // new config.optimization.splitChunks({
         //     names: ['vendor', 'polyfills'],
         //     minChunks: Infinity
         // }),
-
         new HtmlWebpackPlugin({
             template: resolve('index.html'),
             filename: 'index.html',
@@ -192,11 +170,11 @@ module.exports = {
             path: resolve('dist'),
             hash: true
         }),
-
         new webpack.ContextReplacementPlugin(
             // The (\\|\/) piece accounts for path separators in *nix and Windows
             /angular(\\|\/)core(\\|\/)(@angular|esm5)/,
             path.resolve(__dirname, '../src')
         )
-    ]
+    ],
+    recordsOutputPath: path.join(__dirname, "dist", "records.json")
 };

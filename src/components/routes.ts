@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from '_components/views/home/home.component'
 
-export const appRouts: Routes = [
+export const appRoutes: Routes = [
     {
         path: '**',
         redirectTo: '',

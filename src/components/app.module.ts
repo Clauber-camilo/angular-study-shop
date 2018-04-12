@@ -16,10 +16,10 @@ import { HomeModule } from '_components/views/home/home.module'
 import { CartComponent } from '_components/sub-components/cart/cart.component'
 import { CustomRouterStateSerializer } from '_shared/utils'
 
-import { appRouts } from './routes'
+import { appRoutes } from './routes'
 import { reducers } from './reducers'
 
-const Routing:ModuleWithProviders = RouterModule.forRoot(appRouts)
+const Routing:ModuleWithProviders = RouterModule.forRoot(appRoutes)
 
 @NgModule({
     declarations: [

@@ -1,5 +1,19 @@
-import { Component, Input, AfterViewInit} from '@angular/core'
+import { Component, Input, AfterViewInit, ViewChild, ElementRef } from '@angular/core'
+import { Observable } from 'rxjs/Observable'
 const Siema = require('siema')
+
+export interface SiemaOptions {
+    selector?: string | ElementRef
+    duration?: number
+    easing?: string
+    perPage?: any
+    startIndex?: number
+    draggable?: boolean
+    threshold?: number
+    loop?: boolean
+    onInit?: Function
+    onChange?: Function
+}
 
 @Component({
     selector: 'slider-component',
@@ -8,13 +22,26 @@ const Siema = require('siema')
 })
 
 export class SliderComponent implements AfterViewInit {
-    @Input() options: Object
+    @ViewChild('slider') sliderDOM : ElementRef
+    @Input() arrows: Boolean = true
+    @Input() options: SiemaOptions = { selector: '.siema' }
+    @Input() images: Array<string>
+    @Input() height: Number = 400
 
     private siemaInstance: any
     private activeIndex: Number
 
     ngAfterViewInit(): void {
-        this.siemaInstance = new Siema()
+        this.options = Object.assign(
+            this.options ? this.options : {} ,
+            {
+                selector: this.sliderDOM.nativeElement,
+                onChange: () => {
+                    this.activeIndex = this.siemaInstance.currentSlide
+                }
+            }
+        )
+        this.siemaInstance = new Siema(this.options)
     }
 
     prev() {

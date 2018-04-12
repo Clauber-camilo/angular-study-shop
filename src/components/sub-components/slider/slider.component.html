@@ -1,11 +1,20 @@
 <div class="slider-component">
-    <div class="siema">
-        <div><img src="https://pawelgrzybek.com/siema/assets/siema--pink.svg" alt="Siema image" /></div>
+    <div #slider class="siema slider-component__main">
+        <div class="slider-component__main__images"
+            *ngFor="let image of images"
+            [ngStyle]="{
+                'background-image': 'url(' + image +')',
+                'height': height + 'px'
+            }"
+        >
+
+        </div>
+        <!-- <div><img src="https://pawelgrzybek.com/siema/assets/siema--pink.svg" alt="Siema image" /></div>
         <div><img src="https://pawelgrzybek.com/siema/assets/siema--yellow.svg" alt="Siema image" /></div>
         <div><img src="https://pawelgrzybek.com/siema/assets/siema--pink.svg" alt="Siema image" /></div>
-        <div><img src="https://pawelgrzybek.com/siema/assets/siema--yellow.svg" alt="Siema image" /></div>
+        <div><img src="https://pawelgrzybek.com/siema/assets/siema--yellow.svg" alt="Siema image" /></div> -->
     </div>
 
-    <button class="prev">Prev</button>
-    <button class="next">Next</button>
+    <div *ngIf="arrows" class="slider-component__arrows" (click)="prev()"></div>
+    <div *ngIf="arrows" class="slider-component__arrows" (click)="next()"></div>
 </div>

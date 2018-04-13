@@ -3,7 +3,6 @@ import { Observable } from 'rxjs/Observable'
 const Siema = require('siema')
 
 export interface SiemaOptions {
-    selector?: string | ElementRef
     duration?: number
     easing?: string
     perPage?: any
@@ -24,7 +23,7 @@ export interface SiemaOptions {
 export class SliderComponent implements AfterViewInit {
     @ViewChild('slider') sliderDOM : ElementRef
     @Input() arrows: Boolean = true
-    @Input() options: SiemaOptions = { selector: '.siema' }
+    @Input() options: SiemaOptions
     @Input() images: Array<string>
     @Input() height: Number = 400
 

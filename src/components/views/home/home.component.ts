@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy} from '@angular/core'
 import { DomSanitizer } from '@angular/platform-browser';
 import { Store, select} from '@ngrx/store'
 import { Observable} from 'rxjs/Observable'
+import { SiemaOptions } from '../../sub-components/slider/slider.component'
 
 import * as layoutActions from '_components/reducers/layout/action'
 import * as fromRoot from '_components/reducers'
@@ -15,10 +16,12 @@ import * as fromRoot from '_components/reducers'
 
 export class HomeComponent {
     showSideCart$: Observable<boolean>
-    options: Object
+    options: SiemaOptions = {
+        loop: true
+    }
     sliderImages: Array<string> = [
-        require('_img/mac.jpg'),
-        require('_img/headset.jpg')
+        require('_img/collection.jpg'),
+        require('_img/watch.jpg')
     ]
 
     constructor(private store: Store<fromRoot.State>, private sanitization:DomSanitizer) {

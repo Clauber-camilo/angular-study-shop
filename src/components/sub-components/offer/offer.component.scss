@@ -1,0 +1,21 @@
+@import '~_scss/config/vars';
+@import '~_scss/config/mixins';
+
+:host {
+    flex: 1;
+}
+
+.offer-component {
+    background-color: $primary;
+    color: white;
+
+    min-height: 200px;
+    padding: 15px;
+    font-size: rem(30px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: $font-pacifico;
+}

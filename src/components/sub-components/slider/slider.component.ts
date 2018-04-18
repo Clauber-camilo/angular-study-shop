@@ -25,10 +25,11 @@ export class SliderComponent implements AfterViewInit {
     @Input() arrows: Boolean = true
     @Input() options: SiemaOptions
     @Input() images: Array<string>
-    @Input() height: Number = 400
+    @Input() height: Number = 300
+    @Input() bullets: Boolean = true
 
     private siemaInstance: any
-    private activeIndex: Number
+    private activeIndex: Number = 0
 
     ngAfterViewInit(): void {
         this.options = Object.assign(
@@ -50,4 +51,8 @@ export class SliderComponent implements AfterViewInit {
     next() {
         this.siemaInstance.next()
     }
-}
+
+    goTo(index: Number) {
+        this.siemaInstance.goTo(index)
+    }
+ }

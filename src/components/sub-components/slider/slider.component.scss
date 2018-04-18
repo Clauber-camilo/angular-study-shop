@@ -51,7 +51,7 @@
             content: '\f104';
             font-family: FontAwesome;
             font-size: rem(30px);
-            color: $primary--dark;
+            color: $primary;
 
             position: absolute;
             top: 50%;
@@ -60,12 +60,37 @@
             transform: translate(-50%, -50%);
         }
 
-        &:last-of-type {
+        &:nth-child(3) {
             left: inherit;
             right: 10px;
 
             &:after {
                 transform: rotate(180deg) translateY(50%);
+            }
+        }
+    }
+
+    &__bullets {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        width: 100%;
+
+        &__item {
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            margin: 5px;
+
+            background-color: darken($background-secondary, 5);
+            cursor: pointer;
+
+            &--active {
+                width: 10px;
+                height: 10px;
+                background-color: $primary;
             }
         }
     }

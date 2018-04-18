@@ -18,4 +18,14 @@
 
     <div *ngIf="arrows" class="slider-component__arrows" (click)="prev()"></div>
     <div *ngIf="arrows" class="slider-component__arrows" (click)="next()"></div>
+
+    <div *ngIf="bullets" class="slider-component__bullets">
+        <div *ngFor="let image of images; let i = index"
+            class="slider-component__bullets__item"
+            [ngClass]="{
+                'slider-component__bullets__item--active': activeIndex === i
+            }"
+            (click)="goTo(i)"
+        ></div>
+    </div>
 </div>

@@ -1,8 +1,15 @@
+@import '~_scss/config/mixins';
+
 .home-component {
     margin-top: 15px;
 
     &__offers {
-        margin-top: 20px;
+        margin-top: 30px;
         display: flex;
+        flex-wrap: wrap;
+
+        @include media-q($screen-xs) {
+            display: inherit;
+        }
     }
 }

@@ -7,5 +7,9 @@ import { Component, Input } from '@angular/core'
 })
 
 export class OfferComponent {
-    @Input() color: string
-}
+    @Input() BgColor: string
+    @Input() text: string
+    @Input() textColor: string
+    @Input() textSize: string
+    @Input() link: string
+ }

@@ -1,5 +1,14 @@
 <div class="offer-component"
-    [ngStyle]="{'background-color': color}"
+    [ngStyle]="{'background-color': BgColor}"
 >
-    Awesome Eletronics for sale
+    <div
+        class="offer-component__text"
+        [ngStyle]="{
+            'color': textColor,
+            'border-color': textColor,
+            'font-size': textSize
+        }"
+    >
+        {{ text }}
+    </div>
 </div>

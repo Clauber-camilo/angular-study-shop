@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common'
 import { HomeComponent } from './home.component'
 import { SliderComponent } from '_components/sub-components/slider/slider.component'
 import { OfferComponent } from '_components/sub-components/offer/offer.component'
+import { ListProductsComponent } from '_components/sub-components/list-products/list-products.component'
 
 export const ROUTES : Routes = [
     {
@@ -15,8 +16,9 @@ export const ROUTES : Routes = [
 @NgModule({
     declarations: [
         HomeComponent,
-        SliderComponent,
-        OfferComponent
+        ListProductsComponent,
+        OfferComponent,
+        SliderComponent
     ],
     imports: [
         CommonModule,

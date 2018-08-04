@@ -2,7 +2,9 @@
 @import '~_scss/config/mixins';
 
 .header {
-    position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 
     &__login-nav {
         background-color: $primary;

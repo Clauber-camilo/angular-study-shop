@@ -30,6 +30,10 @@
         }
     }
 
+    &--main-page {
+        margin-top: $header-height;
+    }
+
     &:after {
         display: none;
     }

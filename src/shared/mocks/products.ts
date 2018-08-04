@@ -1,4 +1,4 @@
-exports.default = [
+export default [
     {
         name: 'Original Xiaomi Mi Band 2 Smart',
         original_price: 150.15,
@@ -10,7 +10,7 @@ exports.default = [
                       minutes, and sync its data via Bluetooth 4.0 to the Mi Fit app, \
                       so you can check daily, weekly, and monthly history to make a \
                       scientific workout program for a healthier lifestyle',
-        image: require('../assets/img/mi_band.jpg')
+        image: require('_img/mi_band.jpg')
     },
     {
         name: 'Razer DeathAdder Chroma',
@@ -21,7 +21,7 @@ exports.default = [
                     the ergonomic shape of the Razer DeathAdder Chroma gives \
                     gamers the most comfortable gaming experience ever, \
                     especially during the most testing of battles.',
-        image: require('../assets/img/razer.jpg')
+        image: require('_img/razer.jpg')
     },
     {
         name: 'Razer DeathAdder Chroma',
@@ -30,7 +30,7 @@ exports.default = [
         discount_pct: null,
         description: 'Nintendo Switch console, Nintendo Switch dock, \
                         Joy-Con (L) and Joy-Con (R), and Two Joy-Con strap accessories',
-        image: require('../assets/img/switch.jpg')
+        image: require('_img/switch.jpg')
     },
     {
         name: 'Original Xiaomi Mi Band 2 Smart',
@@ -43,7 +43,7 @@ exports.default = [
                       minutes, and sync its data via Bluetooth 4.0 to the Mi Fit app, \
                       so you can check daily, weekly, and monthly history to make a \
                       scientific workout program for a healthier lifestyle',
-        image: require('../assets/img/mi_band.jpg')
+        image: require('_img/mi_band.jpg')
     },
     {
         name: 'Razer DeathAdder Chroma',
@@ -54,7 +54,7 @@ exports.default = [
                     the ergonomic shape of the Razer DeathAdder Chroma gives \
                     gamers the most comfortable gaming experience ever, \
                     especially during the most testing of battles.',
-        image: require('../assets/img/razer.jpg')
+        image: require('_img/razer.jpg')
     },
     {
         name: 'Razer DeathAdder Chroma',
@@ -63,6 +63,6 @@ exports.default = [
         discount_pct: null,
         description: 'Nintendo Switch console, Nintendo Switch dock, \
                         Joy-Con (L) and Joy-Con (R), and Two Joy-Con strap accessories',
-        image: require('../assets/img/switch.jpg')
+        image: require('_img/switch.jpg')
     }
-]
+];

@@ -17,7 +17,7 @@ import { CartComponent } from '_components/sub-components/cart/cart.component'
 import { CustomRouterStateSerializer } from '_shared/utils'
 
 import { appRoutes } from './routes'
-import { reducers } from './reducers'
+import { reducers } from '../reducers'
 
 const Routing:ModuleWithProviders = RouterModule.forRoot(appRoutes)
 

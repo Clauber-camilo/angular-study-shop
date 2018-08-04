@@ -1,6 +1,6 @@
 $margin: 176;
 $percent-gap: ($margin / 1920 * 100) * 2;
-$header-height: 130px;
+$header-height: 129px;
 
 
 /*  Fonts
@@ -9,8 +9,7 @@ $font-size: 14px;
 $font-default: 'Roboto', sans-serif;
 $font-open-sans: 'Open Sans', sans-serif;
 $font-pacifico: 'Pacifico', cursive;
-
-
+$font-merienda: 'Merienda', cursive;
 
 /*  Colors
 =============================================*/
@@ -44,4 +43,4 @@ $header-desk-height: 56px;
 $footer-desk-height: 36px;
 
 $raised: 0 0 2px rgba(0,0,0,.12),0 2px 2px rgba(0,0,0,.2);
-$shadow: 0 0.05rem 0.2rem rgba(69,77,93,.3);
+$shadow: 0 1.05rem 0.2rem rgba(69,77,93,.3);

@@ -1,13 +1,5 @@
-import { Component, Input } from '@angular/core'
-
-export interface Products {
-    name: String,
-    original_price: Number,
-    final_price: Number,
-    discount_pct: Number,
-    description?: String,
-    image?: String
-}
+import { Component, Input, HostBinding } from '@angular/core'
+import { ProductType } from '_components/sub-components/product/product.type'
 
 @Component({
     selector: 'list-products',
@@ -16,5 +8,6 @@ export interface Products {
 })
 
 export class ListProductsComponent {
-    @Input() products: Products
+    @Input() products: Array<ProductType>
+    @HostBinding('class') productList = 'product-list'
 }

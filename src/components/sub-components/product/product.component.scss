@@ -1,0 +1,22 @@
+:host(.product) {
+    max-width: calc((100% / 3) - 6px);
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &:nth-child(3n + 2) {
+        margin: 0 9px 10px 9px;
+    }
+
+    .card {
+        &__image {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+// .product {
+// }

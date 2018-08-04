@@ -1,8 +1,8 @@
 import { Component } from '@angular/core'
 import { Observable} from 'rxjs/Observable'
 import { Store, select} from '@ngrx/store'
-import * as fromRoot from '_components/reducers'
-import * as layoutActions from '_components/reducers/layout/action'
+import * as fromRoot from '_src/reducers'
+import * as layoutActions from '_src/reducers/layout/action'
 
 @Component({
     selector: 'header-component',

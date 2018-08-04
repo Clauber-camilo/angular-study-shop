@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { Store, select} from '@ngrx/store'
 import { Observable } from 'rxjs/Observable'
-import * as fromRoot from '_components/reducers'
+import * as fromRoot from '_src/reducers'
 
 
 @Component({
